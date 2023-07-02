@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- MainActivity   -->
+    <string name="nome_completo">Nome Completo</string>
+    <string name="ex_maria_da_silva">Ex. Maria da Silva</string>
+    <string name="cpf">CPF</string>
+    <string name="cpf_service">CPF:</string>
+    <string name="cpf_example">000.000.00-00</string>
+    <string name="cpf_value">012.345.678-90</string>
+    <string name="birthdate_value">01/10/1950</string>
+    <string name="birthdate">Data de Nascimento</string>
+    <string name="birthdate_service">Data de Nascimento:</string>
+    <string name="birthdate_example">00/00/0000</string>
+    <string name="cellphone">(99) 99999-9999</string>
+    <string name="cellphone_example">Telefone celular</string>
+    <string name="btn_register">Cadastrar</string>
+
+    <string name="invalid_name">Digite um nome válido</string>
+    <string name="invalid_cpf">Digite um CPF válido</string>
+    <string name="invalid_fields">Confira os campos novamente</string>
+    <string name="invalid_birth">Digite uma data de nascimento válida</string>
+    <string name="invalid_phone">Digite um número válido</string>
+
+
+    <!-- FollowActivity   -->
+
+    <string name="select_service">Selecione o Serviço</string>
+
+    <string name="app_name">Gesuas</string>
+    <string name="menuIcon">menu</string>
+    <string name="register">Cadastro</string>
+    <string name="menuicon">menuIcon</string>
+    <string name="forwarding_text">Encaminhamento</string>
+    <string name="follow">Acompanhamento</string>
+    <string name="follow_text">Acompanhamento</string>
+    <string name="social_approach">Abordagem Social</string>
+    <string name="reception">Acolhimento</string>
+    <string name="scfv">SCFV</string>
+    <string name="go">Continuar</string>
+    <string name="name_example">Antônio da Silva Figueiredo</string>
+    <string name="age">idade:</string>
+    <string name="age_value">62</string>
+    <string name="follow_to">Encaminhar para</string>
+    <string name="forward">Encaminhar</string>
+    <string name="reason">Motivo</string>
+    <string name="cancel">Cancelar</string>
+    <string name="cancel_popup"><u>Cancelar</u></string>
+    <string name="save_popup"><u>Salvar</u></string>
+    <string name="send"><u>Deseja confirmar o encaminhamento ?</u></string>
+    <string name="whitecontainer">whiteContainer</string>
+    <string name="save">Salvar</string>
+    <string name="type_reason">Descreva o motivo do encaminhamento</string>
+    <string name="message">Message</string>
+    <string name="confirm">Confirmar</string>
+    <array name="institution">
+        <item>CRAS</item>
+        <item>CREAS</item>
+        <item>Defensoria Pública</item>
+        <item>Ministério Público</item>
+        <item>Poder Judiciário</item>
+    </array>
+</resources>
