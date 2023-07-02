@@ -24,16 +24,17 @@ class ServiceActivity : AppCompatActivity() {
 
         val checkboxes = listOf(checkbox1, checkbox2, checkbox3, checkbox4, checkbox5)
 
-        for (checkbox in checkboxes) {
-            checkbox.setOnCheckedChangeListener { _, isChecked ->
+        for (i in checkboxes.indices) {
+            checkboxes[i].setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
-                    checkboxes.forEach { otherCheckbox ->
-                        if (otherCheckbox != checkbox) {
-                            otherCheckbox.isChecked = false
+                    for (j in checkboxes.indices) {
+                        if (j != i) {
+                            checkboxes[j].isChecked = false
                         }
                     }
                 }
             }
         }
     }
+
 }
