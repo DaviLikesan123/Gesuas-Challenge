@@ -27,6 +27,20 @@
                 app:tint="@color/white"
                 android:contentDescription="@string/menuicon" />
 
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            android:padding="6dp"
+            app:tint="@color/white"
+            android:contentDescription="@string/menuicon" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

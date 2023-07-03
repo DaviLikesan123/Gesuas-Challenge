@@ -5,12 +5,16 @@ import android.widget.Button
 import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
 import com.app.gesuas.R
+import com.app.gesuas.utils.AppBarTemplate
 import com.app.gesuas.utils.nextActivity
 
 class ServiceActivity : AppCompatActivity() {
+    lateinit var appBarTemplate: AppBarTemplate
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_service)
+        appBarTemplate = AppBarTemplate(this)
 
         initConfig()
 
@@ -21,11 +25,11 @@ class ServiceActivity : AppCompatActivity() {
 
         val btn = findViewById<Button>(R.id.btnRegister)
         btn.setOnClickListener {
-           nextActivity(this, ProfileActivity::class.java)
+            nextActivity(this, ProfileActivity::class.java)
         }
     }
 
-    private fun checkboxCheck(){
+    private fun checkboxCheck() {
         val checkbox1 = findViewById<CheckBox>(R.id.checkboxFollow)
         val checkbox2 = findViewById<CheckBox>(R.id.checkboxForwarding)
         val checkbox3 = findViewById<CheckBox>(R.id.checkboxReception)
