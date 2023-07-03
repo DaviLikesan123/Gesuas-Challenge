@@ -1,5 +1,6 @@
 package com.app.gesuas.view
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -7,8 +8,13 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.gesuas.R
-import com.app.gesuas.utils.CPFUtil
-import com.app.gesuas.utils.Mask
+import com.app.gesuas.utils.SHAREDPREF_AGE
+import com.app.gesuas.utils.SHAREDPREF_BIRTHDATE
+import com.app.gesuas.utils.SHAREDPREF_CPF
+import com.app.gesuas.utils.SHAREDPREF_FILENAME
+import com.app.gesuas.utils.SHAREDPREF_NAME
+import com.app.gesuas.utils.SHAREDPREF_PHONE
+import com.app.gesuas.utils.nextActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,17 +26,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initConfig() {
-
         val btn = findViewById<Button>(R.id.btnRegister)
-        btn.setOnClickListener {
-            if (!checkFields()) invalidMessage(R.string.invalid_fields) else nextActivity()
-        }
+        btn.setOnClickListener { if (!checkFields()) invalidMessage(R.string.invalid_fields)
+        else nextActivity(this, ServiceActivity::class.java) }
     }
 
-    private fun nextActivity() {
-        val intent = Intent(this, ServiceActivity::class.java)
-        startActivity(intent)
-    }
 
     private fun invalidMessage(message: Int) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
@@ -74,9 +74,19 @@ class MainActivity : AppCompatActivity() {
             return false
         }
 
+        val year = birthDate.substring(birthDate.length-4)
+        val age = 2023 - year.toInt()
+
+        val sharedPreferences = getSharedPreferences(SHAREDPREF_FILENAME, Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        editor.putString(SHAREDPREF_NAME, name)
+        editor.putString(SHAREDPREF_CPF, cpf)
+        editor.putString(SHAREDPREF_BIRTHDATE, birthDate)
+        editor.putString(SHAREDPREF_PHONE, phone)
+        editor.putInt(SHAREDPREF_AGE, age)
+        editor.apply()
+
         return true
     }
-
-
-
 }
