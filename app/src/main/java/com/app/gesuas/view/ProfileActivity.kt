@@ -84,7 +84,7 @@ class ProfileActivity : AppCompatActivity() {
                 visibleItems(scroll, typeText, bottomNavigationView)
 
             } else {
-                Toast.makeText(this, "não deixei em branco", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "não deixe em branco", Toast.LENGTH_SHORT).show()
             }
         }
 

@@ -30,6 +30,8 @@
     <string name="menuIcon">menu</string>
     <string name="register">Cadastro</string>
     <string name="menuicon">menuIcon</string>
+
+    <!-- ServiceActivity   -->
     <string name="forwarding_text">Encaminhamento</string>
     <string name="follow">Acompanhamento</string>
     <string name="follow_text">Acompanhamento</string>
@@ -37,6 +39,9 @@
     <string name="reception">Acolhimento</string>
     <string name="scfv">SCFV</string>
     <string name="go">Continuar</string>
+
+    <!-- ProfileActivity   -->
+
     <string name="name_example">Antônio da Silva Figueiredo</string>
     <string name="age">idade:</string>
     <string name="age_value">62</string>
@@ -52,11 +57,5 @@
     <string name="type_reason">Descreva o motivo do encaminhamento</string>
     <string name="message">Message</string>
     <string name="confirm">Confirmar</string>
-    <array name="institution">
-        <item>CRAS</item>
-        <item>CREAS</item>
-        <item>Defensoria Pública</item>
-        <item>Ministério Público</item>
-        <item>Poder Judiciário</item>
-    </array>
+
 </resources>

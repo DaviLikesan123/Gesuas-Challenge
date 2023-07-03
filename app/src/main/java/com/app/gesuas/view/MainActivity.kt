@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.gesuas.R
 import com.app.gesuas.utils.AppBarTemplate
-import com.app.gesuas.utils.Mask
 import com.app.gesuas.utils.SHAREDPREF_AGE
 import com.app.gesuas.utils.SHAREDPREF_BIRTHDATE
 import com.app.gesuas.utils.SHAREDPREF_CPF
@@ -20,8 +19,6 @@ import com.app.gesuas.utils.nextActivity
 class MainActivity : AppCompatActivity() {
 
     lateinit var appBarTemplate: AppBarTemplate
-
-    private lateinit var editTextname: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,10 +50,6 @@ class MainActivity : AppCompatActivity() {
         val etBirthDate = findViewById<EditText>(R.id.etBirthDate)
         val etPhone = findViewById<EditText>(R.id.etPhone)
 
-//        etCpf.addTextChangedListener(Mask.mask("###.###.###-##", etCpf))
-//        etBirthDate.addTextChangedListener(Mask.mask("##/##/####", etBirthDate))
-//        etPhone.addTextChangedListener(Mask.mask("()#####-####", etPhone))
-
         val name = etName.text.toString()
         val cpf = etCpf.text.toString()
         val birthDate = etBirthDate.text.toString()
@@ -72,14 +65,13 @@ class MainActivity : AppCompatActivity() {
             return false
         }
 
-        if(birthDate.isBlank()) {
-            return true
-        } else if (birthDate.isNotBlank() && birthDate.length != 8) {
+        if (phone.isEmpty() || phone.length != 11) {
+            invalidMessage(R.string.invalid_phone)
             return false
         }
 
-        if (phone.isBlank() || phone.length != 11 || phone.contains(" ")) {
-            invalidMessage(R.string.invalid_phone)
+        if (!birthDate.isBlank() && birthDate.length != 8) {
+            invalidMessage(R.string.invalid_birth)
             return false
         }
 
@@ -97,5 +89,7 @@ class MainActivity : AppCompatActivity() {
         editor.apply()
 
         return true
+
+
     }
 }
